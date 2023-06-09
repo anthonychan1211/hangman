@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="/createGame.js"></script>
+    <script defer src="./index.js"></script>
+    <title>Hangman</title>
+  </head>
+  <body>
+    <div class="home-page-container">
+      <h1 class="xl-title">Welcome to HangMan!</h1>
+      <h3 class="md-title">Please choose difficulty:</h3>
+      <div class="btn-container">
+        <button class="difficultyBtn">Easy</button>
+        <button class="difficultyBtn">Medium</button>
+        <button class="difficultyBtn">Hard</button>
+      </div>
+    </div>
+    <div class="game-container hidden">
+      <div class="header">
+        <h2 class="sm-title difficultyTitle">Current Difficulty:</h2>
+        <button class="choose-difficulty">&#8593; Choose difficulty</button>
+      </div>
+      <div class="hangman">
+        <svg
+          width="250"
+          height="400"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          class="svg"
+        >
+          <!-- Gallows -->
+          <line
+            x1="20"
+            y1="380"
+            x2="230"
+            y2="380"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            class="gallow"
+          />
+          <line
+            x1="70"
+            y1="380"
+            x2="70"
+            y2="50"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            class="gallow"
+          />
+          <line
+            x1="70"
+            y1="50"
+            x2="170"
+            y2="50"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            class="gallow"
+          />
+          <line
+            x1="170"
+            y1="50"
+            x2="170"
+            y2="100"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            class="gallow"
+          />
+
+          <!-- Head -->
+          <circle
+            cx="170"
+            cy="130"
+            r="30"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            fill="none"
+            class="head"
+          />
+
+          <!-- Body -->
+          <line
+            x1="170"
+            y1="160"
+            x2="170"
+            y2="260"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            class="body"
+          />
+
+          <!-- Arms -->
+          <line
+            x1="170"
+            y1="180"
+            x2="130"
+            y2="220"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            class="left-arm"
+          />
+          <line
+            x1="170"
+            y1="180"
+            x2="210"
+            y2="220"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            class="right-arm"
+          />
+
+          <!-- Legs -->
+          <line
+            x1="170"
+            y1="260"
+            x2="130"
+            y2="320"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            class="left-leg"
+          />
+          <line
+            x1="170"
+            y1="260"
+            x2="210"
+            y2="320"
+            stroke="#f2f2f2"
+            stroke-width="4"
+            class="right-leg"
+          />
+        </svg>
+      </div>
+
+      <div class="wrong-section">
+        <form class="input-section">
+          <p>Wrong guesses:</p>
+          <p class="wrong-list"></p>
+          <input
+            type="text"
+            id="guess"
+            maxlength="1"
+            pattern="[a-zA-Z]"
+            autofocus
+          />
+          <button id="submit">Place your guess</button>
+        </form>
+      </div>
+      <div class="word-container"></div>
+    </div>
+  </body>
+</html>
