@@ -229,7 +229,7 @@ function createGame(difficulty) {
         currLetter.classList.remove("hidden");
         correctCount += appearLetter.length;
         if (correctCount === wordArr.length) {
-          alert("Congratz! You Won!");
+          alert(`Congratz! You Won! The answer is ${word}!`);
           window.location.reload();
         }
       }
