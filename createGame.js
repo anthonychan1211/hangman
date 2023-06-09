@@ -160,10 +160,12 @@ const submitBtn = document.querySelector("#submit");
 const guess = document.querySelector("#guess");
 const wrongList = [];
 const wrongListNode = document.querySelector(".wrong-list");
+const oldBoxes = document.querySelectorAll(".word-box");
 function createGame(difficulty) {
   let list;
   let wrongCount = 0;
   let correctCount = 0;
+  console.log(oldBoxes);
   //   Initiate the level and get a random word
   difficulty === "Easy"
     ? (list = easyWordList)
