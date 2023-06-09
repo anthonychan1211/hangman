@@ -158,7 +158,8 @@ const hardWordList = [
 const wordContainer = document.querySelector(".word-container");
 const submitBtn = document.querySelector("#submit");
 const guess = document.querySelector("#guess");
-
+const wrongList = [];
+const wrongListNode = document.querySelector(".wrong-list");
 function createGame(difficulty) {
   let list;
   let wrongCount = 0;
@@ -207,6 +208,11 @@ function createGame(difficulty) {
     }
     if (appearLetter.length === 0) {
       wrongCount++;
+      if (wrongList.indexOf(guess.value) === -1) {
+        wrongList.push(guess.value);
+        let newWrongList = wrongList.join(`, `);
+        wrongListNode.textContent = newWrongList;
+      }
       updateSVG(wrongCount);
       if (wrongCount === 7) {
         alert("Game Over");

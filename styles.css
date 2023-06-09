@@ -61,7 +61,7 @@ a {
   grid-template-rows: 10% 70% 20%;
   grid-template-areas:
     "sm-title sm-title"
-    "hangman input-section"
+    "hangman right-hand-side-section"
     "word word";
   align-items: center;
   justify-content: center;
@@ -106,8 +106,10 @@ a {
   height: 50px;
   margin: 10px;
 }
+.right-hand-side-section {
+  grid-area: right-hand-side-section;
+}
 .input-section {
-  grid-area: input-section;
   text-align: center;
   display: flex;
   gap: 10px;
